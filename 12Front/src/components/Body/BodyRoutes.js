@@ -5,7 +5,7 @@ import axios from "axios";
 import Favorites from "../Favorite/Favorites";
 import logo from "../img/logo.png";
 import Home from "./bodyPages/Home";
-import CategoryComponents from "./bodyPages/CategoryComponents ";
+import CategoryComponents from "./bodyPages/CategoryComponents";
 import RegisterForm from "../Register/RegisterForm";
 import LoginForm from "../Login/LoginForm";
 import ItemInfo from "./bodyPages/ItemInfo";
