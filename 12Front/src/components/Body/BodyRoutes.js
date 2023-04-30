@@ -31,38 +31,45 @@ import DirectPayments from "./bodyPages/DirectPayment";
 
 const Container = styled.div`
   display: flex;
-  margin: 10px 80px;
+  justify-content: center;
+  padding : 0.5em;
 
   & a {
     text-decoration: none;
     color: black;
+    padding : 1em;
   }
 
 `;
 const LogoDiv = styled.div`
-  margin: 10px 50px;
   & img {
-    width: 70px;
-    height: 70px;
+    width : 6em;
   }
+  margin : 1.5em;
 `;
 
-const NavUl = styled.ul`
+const NavDiv = styled.div`
   align-self: center;
   list-style-type: none;
+  
   & li {
-    margin-right: 20px;
+    margin: 5px;
     display: inline;
+    font-size : 1.3em;
+    margin-top : 5px;
   }
 `;
 
-const IconUl = styled.ul`
+const IconDiv = styled.div`
   align-self: center;
   margin-left: auto;
   display : flex;
   list-style-type: none;
   & li {
     display: inline;
+  }
+  & span {
+    font-size : 2em;
   }
 `;
 
@@ -91,7 +98,7 @@ const BodyRoutes = () => {
               <img src={logo} alt="Logo" />
             </NavLink>
           </LogoDiv>
-          <NavUl>
+          <NavDiv>
             {categories.map((category) => {
               return (
                 <li key={category.categoryId}>
@@ -102,8 +109,8 @@ const BodyRoutes = () => {
             {/* AdminToken이 admin값일때 관리자페이지 노출 */}
             {/* <></>이 아닌 다른 방법으로 노출을 조정할 수 있을지 고민 */}
             <li>{AdminToken || !AdminToken === "null" ? <NavLink to="/AdminMain">관리자페이지</NavLink> : <></>}</li>
-          </NavUl>
-          <IconUl>
+          </NavDiv>
+          <IconDiv>
             {/* admin일때 사람아이콘 출력 x , 유저일때 usermain, 비회원일때 loginForm >> 삼항 연산자에 삼항 연산자를 넣어서 코드의 가독성이 조금 떨어 질 것 같아서 고민 */}
             {AdminToken || !AdminToken === "null" ? (
               <></> 
@@ -161,7 +168,7 @@ const BodyRoutes = () => {
               ) : ( <></>
               )}
             </li>
-          </IconUl>
+          </IconDiv>
         </Container>
         <Routes>
           <Route path="/" element={<Home />} />

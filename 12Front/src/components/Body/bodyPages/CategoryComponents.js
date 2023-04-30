@@ -19,28 +19,20 @@ const ListContainer = styled.div`
 
 
 const ListItems = styled.div`
-    flex : 1;
-    background : white;
-    width : 95%;
-    height : 250px;
-    margin : 10px;
-
-    
+    display : flex;
+    margin : 1em;
 `
 
+
 const StringItems = styled.div`
-    float: right;
-    padding: 6px 12px;
-    border-radius: 8px;
+    text-align : center;
+    padding : 1em;
+    border : 1px solid black;
     font-size: 1rem;
-    line-height: 1.5;
-    border: 1px solid lightgray;
-    color: ${(props) => props.color || 'green'};
-    background: ${(props) => props.background || 'pink'};
+    color: ${(props) => props.color || 'black'};
 `
 
 const Item = styled.div`
-    
     & img {
         width : 70%;
     }

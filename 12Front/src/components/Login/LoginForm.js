@@ -99,7 +99,7 @@ const LoginForm = () => {
 };
 
 const Login = styled.form`
-  padding: 300px;
+  padding: 10em;
 `;
 
 export default LoginForm;

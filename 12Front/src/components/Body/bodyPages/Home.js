@@ -8,14 +8,13 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div style = {{
-      padding : '100px'
+      padding : '1em'
     }}>
       <Container className="d-flex flex-column min-vh-50">
           <BodySlides />
-
           <div className = "d-flex justify-content-around"
           style = {{
-            padding : '50px'
+            padding : '3em'
           }}>
           <Button onClick = {(e) => {
                         e.preventDefault();

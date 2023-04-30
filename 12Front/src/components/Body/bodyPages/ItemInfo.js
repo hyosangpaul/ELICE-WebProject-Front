@@ -4,22 +4,22 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 import { WISHLIST_KEY } from '../../../constants/key'
 import { CARTLIST_KEY } from '../../../constants/key'
+
 //key.js에서 WISHLIST_KEY설정
 const Container = styled.form`
     align-items : center;
     padding : 20px;
-    
     `
+
 const ProductImg = styled.div`
     display : flex;
-    flex-grow: 1;
     align-items: center;
     flex-direction: row;
     justify-content: center;
 `
 const DetailImg = styled.div`
-    width : 100px;
-
+    display: flex;
+    justify-content : center;
 `
 const Wrapper = styled.div`
     padding : 10px;
@@ -31,28 +31,15 @@ const ManufacturerInput = styled.input`
     width : 30%;
     margin : 10px;
     border : none;
-
-`
-
-const ProductInput = styled.input`
-    display : block;
-    width : 30%;
-    margin : 10px;
-    border : none;
-    font-size : 30px;
-
-
 `
 
 const PriceInput = styled.input`
-    display : block;
     width : 30%;
     margin : 10px;
     border : none;
     font-size : 30px;
     font-weight : bold;
-
-
+    text-Align : center;
 `
 const SkuDiv = styled.div`
     margin : 10px;
@@ -70,7 +57,6 @@ const ButtonWrapper = styled.div`
 
 
 const Details = () => {
-    
     const [data, setData] = useState('');
     const [count, setCount] = useState(1);
     const { id } = useParams();
@@ -124,10 +110,10 @@ const Details = () => {
     }
 
     return <Container onSubmit={SubmitHandler}>
-        <ProductImg><img src={data.imgUrl} style = {{width : "430px"}}alt="상품이미지"/>
+        <ProductImg><img src={data.imgUrl} style = {{width : "400px"}} alt="상품이미지"/>
         <Wrapper>
             <ManufacturerInput type="text" name="manufacturer" value={data.manufacturer}/>
-            <ProductInput type="text" name="productName" value={data.productName} />
+            <h1 style = {{ textAlign : 'center'}}>{data.productName}</h1>
             <PriceInput type="text" name="price" value={`${data.price}원`} />
             <SkuDiv><input type="number" name="sku" onChange={ChanegeHandler} defaultValue={count}/>&nbsp;개</SkuDiv>
             
@@ -140,7 +126,7 @@ const Details = () => {
             </ButtonWrapper>
         </Wrapper>
         </ProductImg>
-        <DetailImg><img src={data.shortDesc} style = {{width: "860px"}} alt="상품이미지"/></DetailImg>
+        <DetailImg><img src={data.shortDesc} style = {{width: "800px"}} alt="상품이미지"/></DetailImg>
     </Container>
 }
 
