@@ -23,10 +23,10 @@ app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api", rootRouter);
-app.use("/api/users", userRouter);
-app.use("/api/admin", adminRouter);
-app.use("/api/products", productRouter);
-app.use("/api/categories", categoryRouter);
+app.use("/", rootRouter);
+app.use("/users", userRouter);
+app.use("/admin", adminRouter);
+app.use("/products", productRouter);
+app.use("/categories", categoryRouter);
 
 export default app;
